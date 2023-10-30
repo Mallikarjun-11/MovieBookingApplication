@@ -1,0 +1,71 @@
+<div *ngIf="!confirm" class="main">
+    <div>
+        <label>Enter Number of tickets</label>
+        <input type="number" min="1" max="5" required [(ngModel)]="bookSeatsDto.numberOfTickets" >
+        <p>Ticket price ₹200</p>
+        <div class="seat-icon m-2 p-2 booked">
+            
+        </div>
+        <span>
+            Booked
+        </span>
+        <div class="seat-icon m-2 p-2 selected">
+            
+        </div>
+        <span>Selected</span>
+        <div class="seat-icon m-2 p-2">
+            
+        </div>
+        <span>Available</span>
+    </div>
+   
+
+
+    <div class="containerr" [ngClass]="bookSeatsDto.numberOfTickets>0?'xls':'hide'">
+        <div *ngFor='let item of seatArr' class="seats d-flex">
+            <div [ngClass]="getSelected(j)" class="seat-icon m-2 p-2" *ngFor="let j of item" (click)="selectSeat(j)">
+                <!-- <div [ngClass]="booked(j)"> -->
+                {{j}}
+            <!-- </div> -->
+            </div>
+        </div>
+        
+   
+        <div class="screen">
+            Screen this way!
+        </div>
+  
+        
+        <div>
+            <button (click)="onClick()">Confirm Seats</button>
+        </div>
+        
+        
+    </div>
+    <div class="message" *ngIf="bookSeatsDto.numberOfTickets < 1">
+        Please Select Number of Seats
+      </div>
+</div>
+
+ <div *ngIf="confirm">
+    <h3>Total Amount: {{cartValue}}</h3>
+    <div class="card text-center" *ngFor="let ticket of tickets">
+        <div class="card-header">
+          Ticket Id:{{ticket.ticketId}}, ₹200
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ticket.movie.movieName}}</h5>
+          <p class="card-text">{{ticket.movie.theatreName}}, Seat Number: {{ticket.seatNumber}}</p>
+          <p class="card-text">{{tickets[0].user.userName}}   {{tickets[0].user.emailId}}   {{tickets[0].user.contactNumber}}</p>          
+        </div>
+       
+    </div>
+
+
+        <!-- <h1>Tickets Booked for {{tickets[0].movie.movieName}}</h1>
+        <p>{{tickets[0].user.userName}}   {{tickets[0].user.emailId}}   {{tickets[0].user.contactNumber}}</p>
+        <div *ngFor="let ticket of tickets">
+            Ticket {{ticket.movie.movieName}}
+            Seat Number: {{ticket.seatNumber}}
+        </div> -->
+</div>

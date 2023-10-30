@@ -1,0 +1,44 @@
+<div class="container mt-5 mb-5">
+    
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1>Number of tickets booked</h1>
+            <form [formGroup]="tickets" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="movieName">Movie Name:</label>
+                    <input formControlName="movieName" [ngClass]="{'is-invalid':submitted1 && tickets.controls.movieName.errors}" type="text" class="form-control">
+                </div>         
+
+                <div class="form-group">
+                   <button class="btn btn-primary mt-2">Submit</button>
+                </div>                
+            </form>
+            <h6 class="mt-2" *ngIf="submitted1">Number of tickets booked-{{numberOfTicketsBooked}} for {{tickets.value.movieName}} </h6>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+   
+    <div class="row">
+        
+        <div class="col-md-6 offset-md-3">
+            <h1>Number of tickets available</h1>
+            <form [formGroup]="movieId" (ngSubmit)="onAvailableSubmit()">
+                <div class="form-group">
+                    <label for="movieName">Movie Name:</label>
+                    <input formControlName="movieName" [ngClass]="{'is-invalid':submitted2 && movieId.controls.movieName.errors}" type="text" class="form-control">
+                </div>         
+                <div class="form-group">
+                    <label for="theatreName">Theatre Name:</label>
+                    <input formControlName="theatreName" [ngClass]="{'is-invalid':submitted2 && movieId.controls.theatreName.errors}" type="text" class="form-control">
+                </div>  
+                <div class="form-group">
+                   <button class="btn btn-primary mt-2">Submit</button>
+                </div>                
+            </form>
+            <h6 class="mt-2" *ngIf="submitted2">Number of tickets available-{{numberOfTicketsAvailable}} for {{movieId.value.movieName}} at {{movieId.value.theatreName}} </h6>
+        </div>
+    </div>
+</div>

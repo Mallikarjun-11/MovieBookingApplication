@@ -1,0 +1,5 @@
+{
+    "context":["*"],
+    "target":"https://www.omdbapi.com/",
+    "secure":false
+}

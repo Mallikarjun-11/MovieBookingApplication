@@ -1,0 +1,83 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between" >
+    <a class="navbar-brand" href="#">Movie Booking Application</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" *ngIf="!loggedIn">
+          <a class="nav-link" routerLink="/login">Login<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item" *ngIf="loggedIn" (click)="logoutUser()">
+          <a class="nav-link" href="#">Logout</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> -->
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="../../../assets/favicon.png" width="30" height="30" alt="logo">
+      </a>
+      <a class="navbar-brand" href="/">Movie Booking Application</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+        
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item" *ngIf="!loggedIn">
+            <a class="nav-link" routerLink="/login">Login<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item" *ngIf="loggedIn" (click)="logoutUser()">
+            <a class="nav-link" [routerLink]="['/']">Logout</a>
+          </li>
+          <li class="nav-item" *ngIf="!loggedIn">
+            <a class="nav-link" [routerLink]="['/register']">Register</a>
+          </li>
+          <li class="nav-item" *ngIf="isAdmin">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Admin
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" [routerLink]="['/addMovie']">Add Movie</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/updateMovie']">Update Movie</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/tickets']">Tickets</a></li>
+
+             
+              </ul>
+            </div>
+          </li>          
+          <li class="nav-item" >            
+            <a class="nav-link" [routerLink]="['/updateUser']" tabindex="-1" *ngIf="loggedIn && !isAdmin">User</a>
+          </li>
+      
+        </ul>
+        
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form [formGroup]="createMovieForm" (ngSubmit)="onSubmit()">
+                <!-- <div class="form-group">
+                    <label for="movieName">Title:</label>
+                    <input formControlName="movieName" type="text"  class="form-control" >
+                </div> -->
+                <div class="form-group">
+                    <label for="movieName">Movie Name:</label>
+                    <input formControlName="movieName" [ngClass]="{'is-invalid':submitted && createMovieForm.controls.movieName.errors}" type="text" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="theatreName">Theatre Name:</label>
+                    <input formControlName="theatreName" type="text" [ngClass]="{'is-invalid':submitted && createMovieForm.controls.theatreName.errors}" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="numberOfTickets">Number of Tickets</label>
+                    <input formControlName="numberOfTickets" type="number"  class="form-control" [ngClass]="{'is-invalid':submitted && createMovieForm.controls.numberOfTickets.errors}" class="form-control" min="60" max="520">
+                </div> 
+                <div class="form-group">
+                   <button class="btn btn-primary">Submit</button>
+                </div>                
+            </form>
+        </div>
+    </div>
+</div>

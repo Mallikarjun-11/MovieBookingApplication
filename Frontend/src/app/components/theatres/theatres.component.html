@@ -1,0 +1,27 @@
+<h1>{{movieName}}</h1>
+
+<!-- 
+<div *ngFor="let theatre of theatres">
+    <div>
+        <p>{{theatre.theatreName}}</p>
+        <button routerLink="/seats" >Book Tickets</button>
+
+    </div>
+</div> -->
+
+<table class="table">
+    <!-- <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead> -->
+    <tbody>
+      <tr *ngFor="let theatre of theatres">
+        <th scope="row">{{theatre.theatreName}}</th>
+        <td><button routerLink="/seats/{{movieName}}/{{theatre.theatreName}}" >Book Tickets</button></td>        
+      </tr>
+    </tbody>
+  </table>

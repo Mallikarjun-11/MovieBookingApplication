@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()"  [formGroup]="user" >
+    
+    <div class="mb-3">
+        <label for="firstName" class="form-label" aria-required="true">First Name</label>
+        <input type="text" class="form-control"  id="firstName" required="true" formControlName="firstName" name="firstName">
+    </div>
+    <div class="mb-3">
+        <label for="Last Name" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="Last Name" required formControlName="lastName" name="lastName">
+    </div>
+    <div class="mb-3">
+      <label for="Email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" formControlName="emailId" name="email">
+    </div>
+    <div class="mb-3">
+        <label for="User Name" class="form-label">User Name</label>
+        <input type="text" class="form-control" id="User Name" required formControlName="userName" name="user name">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Contact Number</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" required formControlName="contactNumber" name="contact">
+      </div>
+    <div class="mb-3">
+      <label for="Password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="Password" required formControlName="password" name="pass">
+    </div>
+    <div class="mb-3">
+        <label for="Confirm Password" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="Confirm Password" required formControlName="confirmPassword" name="confirm pass">
+    </div>      
+    <button type="submit" [ngClass]="user.valid===true? 'btn-primary': 'disabled'" class="btn" >Submit</button>
+  </form>

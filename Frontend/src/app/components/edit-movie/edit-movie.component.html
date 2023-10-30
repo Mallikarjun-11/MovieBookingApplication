@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form [formGroup]="updateMovieForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="movieName">Movie Name:</label>
+                    <input formControlName="movieName" type="text" class="form-control" [ngClass]="{'is-invalid':submitted && updateMovieForm.controls.movieName.errors}" >
+                </div>
+                <div class="form-group">
+                    <label for="theatreName">Theatre Name:</label>
+                    <input formControlName="theatreName" [ngClass]="{'is-invalid':submitted && updateMovieForm.controls.theatreName.errors}" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="numberOfTickets">Number of Tickets:</label>
+                    <input formControlName="numberOfTickets" type="number" [ngClass]="{'is-invalid':submitted && updateMovieForm.controls.numberOfTickets.errors}" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="numberOfTicketsBooked">Number of Tickets Booked:</label>
+                    <input formControlName="numberOfTicketsBooked" type="number"  class="form-control" [ngClass]="{'is-invalid':submitted && updateMovieForm.controls.numberOfTicketsBooked.errors}" class="form-control" >
+                </div> 
+                <div class="form-group">
+                    <label for="status">Status:</label>
+                    <input formControlName="ticketStatus" type="text"  class="form-control" [ngClass]="{'is-invalid':submitted && updateMovieForm.controls.ticketStatus.errors}" class="form-control" >
+                </div>
+              
+                <div class="form-group">
+                   <button class="btn btn-primary">Submit</button>
+                </div>                
+            </form>
+        </div>
+    </div>
+</div>
